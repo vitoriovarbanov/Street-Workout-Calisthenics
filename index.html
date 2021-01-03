@@ -7,7 +7,7 @@
     <title>Calisthenics Outdoor</title>
     <meta name="keywords" content="workout, outdoors, muscles" />
     <meta name="author" content="Vitorio Varbanov" />
-    <link href="style-homepage.css" rel="stylesheet">
+    <link href="homepage-style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
     <script src="script.js"></script>
@@ -22,30 +22,43 @@
             </div>
             <div class="right-side-panel">
                 <div class="dropdown">
-                    <button class='title pointerCursor' onclick="showForm()">Log In / Register</button>
-                   <!-- <div class='menu pointerCursor hide'>
-                        <div class='option' id='option1'>Option 1</div>
-                        <div class='option' id='option2'>Option 2</div>
-                    </div>-->
+                    <button class='title pointerCursor' onclick="showForm()">Log In</button>
                 </div>
+                <button id='reg-button' onclick="showRegister()">Register</button>
                 <a href="">Blog</a>
                 <a href="">Contact</a>
-                <a href="">Test</a>
             </div>
         </header>
     </div>
-    <main class="main-content-left">
-        <section class="login-form" id="formShow">
+    <div id='main-content-all'>
+    <main class="main-content-left" id="formShow">
+        <section class="login-form">
             <form>
                 <label>E-mail:</label><input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
                 <label>Password:</label><input type="text" pattern="[A-Za-z0-9@#]+"><br>
                 <input type="submit" id="submit">
             </form>
-
         </section>
-
     </main>
-
+    <main class="main-content-right" id="registerShowHide">
+        <section class="registration-form" >
+            <form>
+                <h1>Get motivated, stay in shape, become better!</h1>
+                <h3>Register and create your personal training plan.</h3>
+                <label>Username:</label><input type="text" pattern="[A-Za-z0-9@#]+"><br>
+                <label>E-mail:</label><input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
+                <label>Confirm e-mail:</label><input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
+                <label>Password:</label><input type="text" pattern="[A-Za-z0-9@#]+" id="currPw"><br>
+                <label>Confirm password:</label>
+                <input type="text" pattern="[A-Za-z0-9@#]+" id="confirmPW" onkeyup="checkMatchPw()"><br>
+                <input type="submit" id="submit">
+                <!--<div class="registrationFormAlert" id="divCheckPasswordMatch">
+                </div>-->
+            </form>
+        </section>
+    </main>
+    </div>
+    </div>
     <footer>
         <a class="fa fa-github fa-lg" aria-hidden="true" href="https://github.com/vitoriovarbanov"></a>
         <a href="https://www.freecodecamp.org/progressiv33" target="_blank" class="fa fa-free-code-camp fa-lg"></a>

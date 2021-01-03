@@ -23,7 +23,7 @@ html,body{
 /*-------------------------------------------------------------------*/
 /*TOP NAVIGATION BAR*/
 .header{
-    border-bottom: 1px solid green;
+    /*border-bottom: 1px solid green;*/
     font-family: 'Montserrat', sans-serif;
     border-radius: 2px;
     display: flex;
@@ -53,14 +53,22 @@ html,body{
     font-size: 1.5rem;
     color: black;
 }
-
+#reg-button{
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    border: none;
+    background: none;
+}
 
 .hide {
     max-height: 0 !important;
 }
 
 .dropdown .title{
-    font-size: 1.13rem;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
     font-family: 'Montserrat', sans-serif;
     color: white;
     border: none;
@@ -69,21 +77,6 @@ html,body{
 .dropdown .title:focus{
     outline: none;
 }
-.dropdown .menu{
-	transition: max-height .5s ease-out;
-	max-height: 20em;
-	overflow: hidden;
-}
-
-.dropdown .menu .option{
-    margin-top: 0.3em;
-    padding-right: 2.2em;
-}
-
-.dropdown .menu .option:hover{
-	background: rgba(0,0,0,0.2);
-}
-
 .pointerCursor:hover{
 	cursor: pointer;
 }
@@ -125,22 +118,25 @@ html,body{
     }
   }  
 /*-------------------------------------------------------------------*/
-/* MAIN CONTENT */  
+/* MAIN CONTENT --- LOGIN FORM */  
   /* Add styles to the form container */
+  #main-content-all{
+      display: flex;
+      flex-direction: row;
+  }
   .main-content-left{
+      display: none;
+      margin-top: 5rem;
       width: 50%;
-      /*border: steelblue 1px solid;*/
+      justify-content: center;
+      align-items: center;
+      
   }
   .login-form{
-      display: none;
       font-family: 'Montserrat', sans-serif;
       color: white;
-      margin-top: 150px;
-      margin-bottom: 100px;
-      margin-left: 8%;
-      max-width: 35%;
+      width: 33%;
       min-width: 250px;
-      /*border: 1px solid red;*/
   }
   form{
       display: flex;
@@ -154,6 +150,9 @@ html,body{
       border-radius: 20px;
       background: none;
       border: 1px solid white;
+      font-size: 1rem;
+      font-style: italic;
+      color: white;
   }
   input:focus {
     outline: none;
@@ -167,44 +166,86 @@ html,body{
     cursor: pointer;
     float: right;
   }
-
-  @media only screen and (max-width: 600px) {
-    .main-content-left{
-        margin: 0 auto;
-        border: steelblue 1px solid;
-        display: flex;
+  @media only screen and (max-width: 600px){
+    #main-content-all{
         justify-content: center;
-        align-items: center;
-        
     }
-    .login-form{
-        margin-top: 200px;
-        margin-bottom: 100px;
-        margin-left: 0%;
-        max-width: 40%;
-        min-width: 150px;
+    input[type=submit]{
+        height: 2rem;
     }
   }
-  @media only screen and (max-height: 600px) {
-    .login-form{
-        margin-top: 50px;
-        margin-bottom: 10px;
-        max-width: 40%;
-        min-width: 150px;
+  @media screen and (max-height: 400px){
+    .main-content-left{
+        margin-top: 2rem;
     }
-    label{
-        font-size: 0.7rem;
-    }
-    #submit{
-    padding: 6px 5px;
+    input[type=submit]{
+        height: 2rem;
     }
   }
+
 
 /*-------------------------------------------------------------------*/
+/* MAIN CONTENT --- REGISTRATION FORM RIGHT SIDE */
 
+.main-content-right{
+    width: 50%;
+    display: none;
+    justify-content: center;
+}
+
+.registration-form{
+    margin-top: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    color: white; 
+    max-width: 500px;
+    min-width: 350px;
+    border-radius: 15px;
+    font-size: 1rem;
+
+}
+/*form h1{
+    margin: 0.2rem;
+}
+form h3{
+    margin: 0.2rem;
+}*/
+form input{
+    width: 75%;
+    margin: 0 auto;
+}
+form label{
+    margin: 0 auto;
+}
+#submit{
+    border-radius: 15px;
+}
+@media only screen and (max-width: 800px){
+    #main-content-all{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-height: 700px){
+    .registration-form h1{
+        margin-top: 0;
+        font-size: 1.2rem;
+    }
+    .registration-form h3{
+        margin-top: 0;
+        font-size: 1rem;
+    }
+    .registration-form label{
+        margin-top: 0;
+    }
+    .registration-form input{
+        margin-top: 0;
+    }
+
+}
+/*-------------------------------------------------------------------*/
 /* FOOTER */
 footer{
-    border-top: green 1px solid;
+    /*border-top: green 1px solid;*/
         font-family: 'Montserrat', sans-serif;
         color: white;
         position: fixed;
@@ -236,6 +277,7 @@ footer span{
     footer{
       flex-direction: column;
       min-height: 5rem;
+      font-size: 0.75rem;
     }
     footer a{
         padding-top: 0.8rem;
@@ -246,7 +288,7 @@ footer span{
   }
 @media only screen and (max-width: 300px) {
     footer{
-      font-size: 0.7rem;
+      font-size: 0.65rem;
     }
   }  
 
